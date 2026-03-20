@@ -1,0 +1,9 @@
+[project]
+name = "election-data-2082"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.7"
+dependencies = [
+    "httpx>=0.28.1",
+]
