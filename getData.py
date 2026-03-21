@@ -33,7 +33,6 @@ class DataExtractor:
             await asyncio.sleep(random.uniform(1.5,2.5))
         
             csrf_token=self.client.cookies.get("CsrfToken")
-            print(csrf_token)
             headers={"user-agent":self.user_agent,
                     "x-csrf-token": csrf_token,
                     "x-requested-with": "XMLHttpRequest",

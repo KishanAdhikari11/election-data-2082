@@ -30,7 +30,7 @@ class CSVHandler:
 
     def store_to_csv(self,file_name=None):
         if self.type=="FTPT":
-            columns=["Rank","CandidateName","PoliticalPartyName","PartySymbol","TotalVoteReceived","Gender","Age","StateName","DistrictName","Constituency","QUALIFICATION","EXPERIENCE","OTHERDETAILS","NAMEOFINST"]
+            columns=["Rank","CandidateName","PoliticalPartyName","PartySymbol","TotalVoteReceived","Gender","Age","Status","StateName","DistrictName","Constituency","QUALIFICATION","EXPERIENCE","OTHERDETAILS","NAMEOFINST"]
             for (state,district,constituency),candidates in self.grouped_data.items():
                 filename = f"{self.type}/{state}/{district}/{constituency}.csv"
                 with open(filename,"w") as csvfile:
@@ -45,6 +45,7 @@ class CSVHandler:
                             "TotalVoteReceived": int(candidate.get("TotalVoteReceived")),
                             "Gender": candidate.get("Gender"),
                             "Age": candidate.get("Age"),
+                            "Status":candidate.get("Remarks"),
                             "StateName": candidate.get("StateName"),
                             "DistrictName": candidate.get("DistrictName"),
                             "Constituency": candidate.get("SCConstID"),
